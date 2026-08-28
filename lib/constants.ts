@@ -4,9 +4,9 @@ export const SITE_URL =
 export const SITE_NAME = "ImmoZen Groupe";
 
 export const CONTACT = {
-  phone: "+212771495105",
-  phoneHref: "tel:+212771495105",
-  whatsappHref: "https://wa.me/212771495105",
+  phone: "+212775918796",
+  phoneHref: "tel:+212775918796",
+  whatsappHref: "https://wa.me/212775918796",
   email: "contact@immozengroupe.com",
   city: "Casablanca, Maroc",
 };
