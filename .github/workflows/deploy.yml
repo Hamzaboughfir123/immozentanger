@@ -1,4 +1,4 @@
-name: Deploy ImmoZen
+name: Deploy ImmoZen Tanger
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to VPS
+    name: Deploy Tanger to VPS
     runs-on: ubuntu-latest
 
     steps:
@@ -16,13 +16,16 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
+          port: 22
           key: ${{ secrets.VPS_SSH_KEY }}
+          debug: true
+
           script: |
             set -e
 
-            echo "🚀 Déploiement ImmoZen..."
+            echo "🚀 Déploiement ImmoZen Tanger..."
 
-            cd /var/www/immozen
+            cd /var/www/immozen-tanger
 
             echo "📥 Récupération du code..."
             git fetch origin main
@@ -35,9 +38,9 @@ jobs:
             npm run build
 
             echo "♻️ Redémarrage PM2..."
-            pm2 restart immozen
+            pm2 restart immozen-tanger
 
             echo "💾 Sauvegarde PM2..."
             pm2 save
 
-            echo "✅ Déploiement terminé !"
+            echo "✅ Déploiement ImmoZen Tanger terminé !"
