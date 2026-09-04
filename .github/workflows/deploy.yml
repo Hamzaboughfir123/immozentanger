@@ -23,7 +23,7 @@ jobs:
           script: |
             set -e
 
-            echo "🚀 Déploiement ImmoZen Tanger..."
+            echo "🚀 Déploiement ImmoZen Tangerr..."
 
             cd /var/www/immozen-tanger
 
