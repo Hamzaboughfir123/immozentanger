@@ -12,8 +12,8 @@ export function OwnerLeadSection() {
     >
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=2400&q=80&auto=format&fit=crop"
-          alt="La Koutoubia au lever du soleil, Marrakech, avec les montagnes de l'Atlas en arrière-plan"
+          src="https://images.unsplash.com/photo-1582919534700-acf2374f10d3?w=2400&q=80&auto=format&fit=crop"
+          alt="Vue aérienne de la médina de Tanger et de sa baie au crépuscule, avec le détroit de Gibraltar en arrière-plan"
           fill
           loading="lazy"
           sizes="100vw"
