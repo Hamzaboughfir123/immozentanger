@@ -31,7 +31,7 @@ export function SavingsCalculator() {
   return (
     <div className="grid overflow-hidden rounded-[2rem] bg-white shadow-[0_30px_90px_-30px_rgba(16,18,15,0.25)] lg:grid-cols-2">
       {/* Inputs */}
-      <div className="flex flex-col gap-5 p-6 sm:p-8">
+      <div className="flex min-w-0 flex-col gap-5 p-4 sm:p-8">
         <div>
           <label
             htmlFor={valueId}
@@ -39,14 +39,14 @@ export function SavingsCalculator() {
           >
             Valeur estimée du bien
           </label>
-          <div className="flex items-center gap-3 rounded-2xl border border-brand-ink/10 bg-brand-beige/40 px-5 py-4">
+          <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-brand-ink/10 bg-brand-beige/40 px-4 py-3 sm:px-5 sm:py-4">
             <input
               id={valueId}
               type="text"
               inputMode="numeric"
               value={formatThousands(value)}
               onChange={(e) => handleValueInput(e.target.value)}
-              className="w-full bg-transparent font-display text-2xl font-medium text-brand-ink outline-none"
+              className="min-w-0 w-full bg-transparent font-display text-xl font-medium text-brand-ink outline-none sm:text-2xl"
               aria-describedby={`${valueId}-suffix`}
             />
             <span id={`${valueId}-suffix`} className="text-sm font-semibold text-brand-ink/50">
@@ -94,15 +94,15 @@ export function SavingsCalculator() {
       </div>
 
       {/* Result */}
-      <div className="flex flex-col justify-between gap-5 bg-brand-forest p-6 text-white sm:p-8">
+      <div className="flex min-w-0 flex-col justify-between gap-5 bg-brand-forest p-4 text-white sm:p-8">
         <div className="flex flex-col gap-3">
-          <div className="flex items-center justify-between text-sm text-white/70">
-            <span>Commission traditionnelle estimée ({rate.toString().replace(".", ",")} %)</span>
-            <span className="font-semibold text-white">{formatMAD(traditionalCommission)}</span>
+          <div className="flex items-start justify-between gap-3 text-sm text-white/70">
+            <span className="min-w-0">Commission traditionnelle estimée ({rate.toString().replace(".", ",")} %)</span>
+            <span className="shrink-0 font-semibold text-right text-white">{formatMAD(traditionalCommission)}</span>
           </div>
-          <div className="flex items-center justify-between text-sm text-white/70">
-            <span>Commission propriétaire ImmoZen Groupe</span>
-            <span className="font-semibold text-brand-pistachio">0 DH*</span>
+          <div className="flex items-start justify-between gap-3 text-sm text-white/70">
+            <span className="min-w-0">Commission propriétaire ImmoZen Groupe</span>
+            <span className="shrink-0 font-semibold text-right text-brand-pistachio">0 DH*</span>
           </div>
           <div className="h-px w-full bg-white/15" />
           <div>

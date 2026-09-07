@@ -32,7 +32,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <Container className="flex h-20 items-center justify-between">
+      <Container className="flex h-16 items-center justify-between sm:h-20">
         <a href="#accueil" className="flex items-center" aria-label={SITE_NAME}>
           <Image
             src="/images/logo.png"
@@ -40,7 +40,7 @@ export function Navbar() {
             width={175}
             height={60}
             priority
-            className="h-9 w-auto rounded-lg sm:h-10"
+            className="h-8 w-auto rounded-lg sm:h-10"
           />
         </a>
 
@@ -101,7 +101,7 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-brand-ink/10 bg-white px-6 pb-8 pt-4 lg:hidden"
+          className="border-t border-brand-ink/10 bg-white px-4 pb-6 pt-3 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Navigation mobile">
             {NAV_LINKS.map((link) => (
@@ -109,7 +109,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-brand-ink/80 hover:bg-brand-beige"
+                className="rounded-lg px-3 py-2.5 text-base font-medium text-brand-ink/80 hover:bg-brand-beige"
               >
                 {link.label}
               </a>
