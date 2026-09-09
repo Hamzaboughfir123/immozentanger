@@ -32,18 +32,28 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <Container className="flex h-16 items-center justify-between sm:h-20">
-        <a href="#accueil" className="flex items-center" aria-label={SITE_NAME}>
-          <Image
-            src="/images/logo.png"
-            alt={SITE_NAME}
-            width={175}
-            height={60}
-            priority
-            className="h-8 w-auto rounded-lg sm:h-10"
-          />
-        </a>
+      <Container className="flex h-14 items-center justify-between gap-2 sm:h-20">
+        <div className="flex min-w-0 items-center gap-5 sm:gap-6">
+          <a href="#accueil" className="flex shrink-0 items-center" aria-label={SITE_NAME}>
+            <Image
+              src="/images/logo.png"
+              alt={SITE_NAME}
+              width={175}
+              height={60}
+              priority
+              className="h-7 w-auto rounded-lg sm:h-10"
+            />
+          </a>
 
+          <a
+            href={CONTACT.phoneHref}
+            className="inline-flex min-h-11 items-center gap-1.5 whitespace-nowrap text-xs font-bold text-brand-forest sm:text-sm lg:hidden"
+            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+          >
+            <PhoneIcon />
+            {CONTACT.phone}
+          </a>
+        </div>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Navigation principale">
           {NAV_LINKS.map((link) => (
             <a
@@ -73,7 +83,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-brand-ink lg:hidden"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-brand-ink lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
