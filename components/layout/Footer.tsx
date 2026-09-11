@@ -1,5 +1,12 @@
 import { Container } from "@/components/ui/Container";
-import { CONTACT, NAV_LINKS, SITE_NAME, SOCIAL_LINKS } from "@/lib/constants";
+import {
+  CONTACT,
+  GROUP_URL,
+  NAV_LINKS,
+  NETWORK_SITES,
+  SITE_NAME,
+  SOCIAL_LINKS,
+} from "@/lib/constants";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -8,9 +15,12 @@ export function Footer() {
     <footer className="bg-brand-ink text-white/80">
       <Container className="grid gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
-          <p className="font-display text-2xl font-semibold text-white">
+          <a
+            href={GROUP_URL}
+            className="w-fit font-display text-2xl font-semibold text-white transition-colors hover:text-brand-pistachio"
+          >
             {SITE_NAME}
-          </p>
+          </a>
           <p className="max-w-xs text-sm leading-relaxed text-white/60">
             Agence immobilière nouvelle génération à Tanger. IA, digital et
             accompagnement humain au service des propriétaires.
@@ -91,6 +101,30 @@ export function Footer() {
           </ul>
         </div>
       </Container>
+
+      <div className="border-t border-white/10">
+        <Container className="flex flex-col gap-2 py-5 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            ImmoZen — Réseau immobilier du groupe{" "}
+            <a href={GROUP_URL} className="text-white/60 hover:text-brand-pistachio">
+              ImmoZen Groupe
+            </a>
+          </p>
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>ImmoZen au Maroc :</span>
+            {NETWORK_SITES.map((site, index) => (
+              <span key={site.href} className="flex items-center gap-2">
+                <a href={site.href} className="text-white/60 hover:text-brand-pistachio">
+                  {site.label}
+                </a>
+                {index < NETWORK_SITES.length - 1 ? (
+                  <span aria-hidden="true">·</span>
+                ) : null}
+              </span>
+            ))}
+          </p>
+        </Container>
+      </div>
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-2 py-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
