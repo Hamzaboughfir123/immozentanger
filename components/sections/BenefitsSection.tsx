@@ -35,7 +35,7 @@ export function BenefitsSection() {
       <div className="absolute right-0 top-0 hidden h-[43%] w-[42%] lg:block">
         <Image
           src="/images/hero-tanger.jpg"
-          alt="Villa entourée de palmiers au Maroc"
+          alt="Le phare du Cap Spartel entouré de palmiers, à Tanger"
           fill
           sizes="42vw"
           className="object-cover object-[62%_center]"
@@ -47,7 +47,7 @@ export function BenefitsSection() {
         <div className="grid items-start gap-3 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full bg-brand-pistachio px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.12em] text-brand-ink shadow-[0_8px_24px_rgba(165,210,50,0.28)]">
-              Propriétaires au Maroc
+              Propriétaires à Tanger
             </span>
             <h2 className="mt-3 max-w-3xl text-balance font-display text-[clamp(2.1rem,4.5vw,4rem)] font-semibold leading-[0.9] text-brand-ink">
               Votre bien mérite

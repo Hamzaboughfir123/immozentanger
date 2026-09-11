@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
-import { buildMetadata, realEstateAgentJsonLd } from "@/lib/seo";
+import { buildMetadata, realEstateAgentJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -36,6 +36,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(realEstateAgentJsonLd()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd()),
           }}
         />
       </head>

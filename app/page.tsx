@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
+import { FAQSection } from "@/components/sections/FAQSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { OwnerLeadSection } from "@/components/sections/OwnerLeadSection";
@@ -17,6 +18,7 @@ export default function Home() {
         <SavingsSection />
         <PropertyTypesSection />
         <HowItWorksSection />
+        <FAQSection />
         <OwnerLeadSection />
       </main>
       <Footer />

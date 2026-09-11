@@ -48,10 +48,10 @@ export function Navbar() {
           <a
             href={CONTACT.phoneHref}
             className="inline-flex min-h-11 items-center gap-1.5 whitespace-nowrap text-xs font-bold text-brand-forest sm:text-sm lg:hidden"
-            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phoneDisplay}`}
           >
             <PhoneIcon />
-            {CONTACT.phone}
+            {CONTACT.phoneDisplay}
           </a>
         </div>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Navigation principale">
@@ -70,10 +70,10 @@ export function Navbar() {
           <a
             href={CONTACT.phoneHref}
             className="hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-brand-forest transition-colors hover:text-brand-forest-dark xl:inline-flex"
-            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phone}`}
+            aria-label={`Appeler ImmoZen Groupe au ${CONTACT.phoneDisplay}`}
           >
             <PhoneIcon />
-            {CONTACT.phone}
+            {CONTACT.phoneDisplay}
           </a>
           <Button href="#confier-mon-bien" size="md">
             Confier mon bien
@@ -131,7 +131,7 @@ export function Navbar() {
             className="mt-4 flex items-center justify-center gap-2 rounded-full border border-brand-forest/25 px-5 py-3 text-sm font-semibold text-brand-forest"
           >
             <PhoneIcon />
-            {CONTACT.phone}
+            {CONTACT.phoneDisplay}
           </a>
           <Button href="#confier-mon-bien" className="mt-4 w-full" onClick={() => setOpen(false)}>
             Confier mon bien

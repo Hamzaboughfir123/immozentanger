@@ -1,33 +1,34 @@
 import type { Metadata } from "next";
-import { CONTACT, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_LINKS } from "@/lib/constants";
 
 export const DEFAULT_TITLE =
-  "ImmoZen Groupe | Vendez ou louez votre bien sans commission propriétaire au Maroc";
+  "ImmoZen Tanger | Agence immobilière sans commission propriétaire";
 
 export const DEFAULT_DESCRIPTION =
-  "ImmoZen Groupe modernise l'immobilier au Maroc grâce à l'IA, au digital et à un accompagnement personnalisé. Confiez-nous votre appartement, villa, terrain, commerce ou riad.";
-
-const OG_IMAGE =
-  "https://images.unsplash.com/photo-1565020244281-fe53df7df170?w=1200&h=630&fit=crop&q=80";
+  "ImmoZen Tanger accompagne les propriétaires pour vendre ou louer leur appartement, villa, terrain ou commerce à Tanger. 0 DH de commission propriétaire, accompagnement complet.";
 
 export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
   return {
     metadataBase: new URL(SITE_URL),
     title: {
       default: DEFAULT_TITLE,
-      template: `%s | ${SITE_NAME}`,
+      template: "%s | ImmoZen Tanger",
     },
     description: DEFAULT_DESCRIPTION,
     keywords: [
-      "vendre sans commission Maroc",
-      "agence immobilière Maroc",
-      "louer appartement sans commission",
-      "ImmoZen Groupe",
-      "vendre villa Maroc",
-      "agence immobilière nouvelle génération",
+      "agence immobilière Tanger",
+      "agence immobilière Tanger propriétaire",
+      "vendre appartement Tanger",
+      "vendre villa Tanger",
+      "vendre maison Tanger",
+      "louer appartement Tanger",
+      "confier bien immobilier Tanger",
+      "agence immobilière sans commission propriétaire Tanger",
+      "0 DH commission propriétaire Tanger",
+      "ImmoZen Tanger",
     ],
     alternates: {
-      canonical: SITE_URL,
+      canonical: "/",
     },
     openGraph: {
       type: "website",
@@ -36,20 +37,14 @@ export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
       siteName: SITE_NAME,
       title: DEFAULT_TITLE,
       description: DEFAULT_DESCRIPTION,
-      images: [
-        {
-          url: OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: "ImmoZen Groupe — agence immobilière nouvelle génération au Maroc",
-        },
-      ],
+      // L'image Open Graph est fournie par app/opengraph-image.tsx
+      // (convention de fichier Next.js) afin d'éviter toute duplication.
     },
     twitter: {
       card: "summary_large_image",
       title: DEFAULT_TITLE,
       description: DEFAULT_DESCRIPTION,
-      images: [OG_IMAGE],
+      // Idem : image fournie par app/twitter-image.tsx.
     },
     robots: {
       index: true,
@@ -66,28 +61,53 @@ export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
 }
 
 /**
- * JSON-LD Schema.org — RealEstateAgent, imbriqué dans LocalBusiness.
- * Rendu dans le <head> via <script type="application/ld+json">.
+ * JSON-LD Schema.org — RealEstateAgent, ciblé sur Tanger.
+ * Rendu dans le <head> via <script type="application/ld+json"> (app/layout.tsx).
+ *
+ * N'invente aucune donnée non fournie par le projet : pas d'adresse postale
+ * précise, pas de note/avis, pas de statistiques. `sameAs` ne reprend que les
+ * réseaux sociaux réels déclarés dans lib/constants.ts.
  */
 export function realEstateAgentJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    name: "ImmoZen Groupe",
-    alternateName: "ImmoZen",
+    "@id": `${SITE_URL}/#organization`,
+    name: "ImmoZen Tanger",
+    alternateName: "ImmoZen Groupe",
     description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
     telephone: CONTACT.phone,
     email: CONTACT.email,
+    image: `${SITE_URL}/images/logo.png`,
+    logo: `${SITE_URL}/images/logo.png`,
     areaServed: {
-      "@type": "Country",
-      name: "Maroc",
+      "@type": "City",
+      name: "Tanger",
     },
     address: {
       "@type": "PostalAddress",
+      addressLocality: "Tanger",
       addressCountry: "MA",
-      addressLocality: "Casablanca",
     },
     knowsLanguage: ["fr", "ar"],
+    sameAs: SOCIAL_LINKS.map((social) => social.href),
+  };
+}
+
+/**
+ * JSON-LD Schema.org — WebSite, relié à l'organisation via `publisher`.
+ * Pas de `potentialAction` SearchAction : le site n'a pas de moteur de
+ * recherche interne, ce serait une donnée structurée trompeuse.
+ */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: SITE_NAME,
+    inLanguage: "fr-MA",
+    publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }
