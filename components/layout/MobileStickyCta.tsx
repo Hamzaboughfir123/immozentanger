@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/Button";
+import { OpenPropertyLeadButton } from "@/components/property-lead/OpenPropertyLeadButton";
 
 /**
  * Barre CTA discrète, visible uniquement sur mobile, au-dessus du contenu
@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 export function MobileStickyCta() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-brand-ink/10 bg-white/95 px-4 py-3 backdrop-blur-md lg:hidden [padding-bottom:max(0.75rem,env(safe-area-inset-bottom))]">
-      <Button href="#confier-mon-bien" className="w-full" size="md">
+      <OpenPropertyLeadButton className="w-full" size="md">
         Confier mon bien
-      </Button>
+      </OpenPropertyLeadButton>
     </div>
   );
 }

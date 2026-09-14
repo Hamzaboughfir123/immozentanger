@@ -7,6 +7,7 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { OwnerLeadSection } from "@/components/sections/OwnerLeadSection";
 import { PropertyTypesSection } from "@/components/sections/PropertyTypesSection";
 import { SavingsSection } from "@/components/sections/SavingsSection";
+import { PropertyLeadModal } from "@/components/property-lead/PropertyLeadModal";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <OwnerLeadSection />
       </main>
       <Footer />
+      <PropertyLeadModal />
     </>
   );
 }

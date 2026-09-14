@@ -43,3 +43,24 @@ export const NAV_LINKS = [
 ] as const;
 
 export const DEFAULT_COMMISSION_RATE = 2.5;
+
+/**
+ * Config du formulaire "Confier mon bien" — collecte centralisée des leads
+ * propriétaires depuis les 5 sites ImmoZen vers l'API immozen-leads-backend
+ * (consultée ensuite via immozen-leads-dashboard). Chaque site (Marrakech,
+ * Casablanca, Rabat, Tanger, Agadir) définit ses propres valeurs via
+ * variables d'environnement ; ce fichier ne change pas d'un site à l'autre,
+ * seul le `.env.local` de chaque repo diffère.
+ */
+export const PROPERTY_LEAD_CONFIG = {
+  /** Ville affichée à l'utilisateur (lecture seule) — jamais éditable. */
+  city: process.env.NEXT_PUBLIC_CITY ?? "Tanger",
+  /** Domaine du site courant, envoyé comme `sourceSite` — seule source de
+   * vérité pour la ville côté backend (jamais un champ saisi). Doit rester
+   * synchronisé avec `IMMOZEN_SITES` dans
+   * immozen-leads-backend/src/common/immozen-network.ts. */
+  siteDomain:
+    process.env.NEXT_PUBLIC_SITE_DOMAIN ?? SITE_URL.replace(/^https?:\/\/(www\.)?/, ""),
+  /** URL de l'API centrale immozen-leads-backend (identique pour les 5 sites). */
+  apiUrl: process.env.NEXT_PUBLIC_API_URL ?? "https://api.immozengroupe.com",
+};
