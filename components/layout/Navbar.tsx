@@ -36,13 +36,16 @@ export function Navbar() {
       <Container className="flex h-14 items-center justify-between gap-2 sm:h-20">
         <div className="flex min-w-0 items-center gap-5 sm:gap-6">
           <a href="#accueil" className="flex shrink-0 items-center" aria-label={SITE_NAME}>
-            <Image
-              src="/images/logo.png"
-              alt={SITE_NAME}
-              width={175}
-              height={60}
-              className="h-10 w-auto rounded-lg sm:h-11"
-            />
+            <span className="relative block h-11 w-[122px] shrink-0 overflow-hidden rounded-lg bg-[#164b35] sm:h-12 sm:w-36">
+              <Image
+                src="/images/logo-immozen.jpeg"
+                alt={SITE_NAME}
+                width={1280}
+                height={634}
+                className="absolute left-1/2 top-1/2 h-auto w-[125px] max-w-none -translate-x-1/2 -translate-y-1/2 mix-blend-screen sm:w-[150px]"
+                priority
+              />
+            </span>
           </a>
 
           <a

@@ -79,8 +79,8 @@ export function realEstateAgentJsonLd() {
     url: SITE_URL,
     telephone: CONTACT.phone,
     email: CONTACT.email,
-    image: `${SITE_URL}/images/logo.png`,
-    logo: `${SITE_URL}/images/logo.png`,
+    image: `${SITE_URL}/images/logo-immozen.jpeg`,
+    logo: `${SITE_URL}/images/logo-immozen.jpeg`,
     areaServed: {
       "@type": "City",
       name: "Tanger",
