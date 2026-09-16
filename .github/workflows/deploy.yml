@@ -43,4 +43,4 @@ jobs:
             echo "💾 Sauvegarde PM2..."
             pm2 save
 
-            echo "✅ Déploiement ImmoZen Tanger terminé !"
+            echo "✅ Deploiement ImmoZen Tanger terminé !"
