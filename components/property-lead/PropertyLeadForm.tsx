@@ -137,14 +137,6 @@ export function PropertyLeadForm({ onSuccess }: { onSuccess?: () => void }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
-      {/* Ville détectée automatiquement — affichage seul, jamais éditable */}
-      <div className="flex items-center gap-2 rounded-xl bg-brand-beige/60 px-4 py-2.5 text-sm text-brand-ink/70">
-        <LocationIcon />
-        <span>
-          Bien situé à <strong className="text-brand-ink">{PROPERTY_LEAD_CONFIG.city}</strong>
-        </span>
-      </div>
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Field label="Prénom" error={errors.firstName}>
           <input
@@ -330,21 +322,6 @@ function CheckIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-
-function LocationIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0 text-brand-forest">
-      <path
-        d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="12" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.8" />
     </svg>
   );
 }
