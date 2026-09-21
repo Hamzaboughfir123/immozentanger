@@ -16,7 +16,11 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
-export const metadata: Metadata = buildMetadata();
+export const metadata: Metadata = buildMetadata({
+  verification: {
+    google: "RazHO2V0ggQoEFOX86scyM6ieMl5mQ5zDJdcO9JUC4U",
+  },
+});
 
 export const viewport: Viewport = {
   themeColor: "#06733D",
