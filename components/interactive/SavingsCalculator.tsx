@@ -61,7 +61,7 @@ export function SavingsCalculator() {
             step={STEP_VALUE}
             value={Math.min(value, MAX_VALUE)}
             onChange={(e) => setValue(Number(e.target.value))}
-            className="mt-4 w-full accent-brand-forest"
+            className="mt-4 h-11 w-full accent-brand-forest"
             aria-label="Ajuster la valeur du bien avec le curseur"
           />
         </div>
@@ -80,7 +80,7 @@ export function SavingsCalculator() {
                 type="button"
                 id={preset === DEFAULT_COMMISSION_RATE ? rateId : undefined}
                 onClick={() => setRate(preset)}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                className={`min-h-11 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
                   rate === preset
                     ? "bg-brand-forest text-white"
                     : "bg-brand-beige/60 text-brand-ink/70 hover:bg-brand-beige"
@@ -111,7 +111,7 @@ export function SavingsCalculator() {
               100 % d&rsquo;économie garantie
             </span>
             <p className="mt-2 text-sm font-medium text-white/70">Économie potentielle</p>
-            <p className="mt-1 font-display text-4xl font-medium text-brand-pistachio tabular-nums drop-shadow-[0_0_30px_rgba(165,210,50,0.35)]">
+            <p className="mt-1 break-words font-display text-3xl sm:text-4xl font-medium text-brand-pistachio tabular-nums drop-shadow-[0_0_30px_rgba(165,210,50,0.35)]">
               {formatMAD(traditionalCommission)}
             </p>
           </div>

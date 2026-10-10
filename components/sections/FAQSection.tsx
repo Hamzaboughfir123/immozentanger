@@ -93,8 +93,8 @@ export function FAQSection() {
         <div className="mx-auto mt-8 flex max-w-3xl flex-col gap-3">
           {FAQ_ITEMS.map((item, index) => (
             <Reveal key={item.question} delay={index * 50}>
-              <details className="group rounded-2xl border border-brand-beige-dark bg-brand-beige/25 p-5 open:bg-white open:shadow-[0_12px_30px_-22px_rgba(16,18,15,0.5)]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-brand-ink marker:content-none">
+              <details className="group rounded-2xl border border-brand-beige-dark bg-brand-beige/25 p-4 sm:p-5 open:bg-white open:shadow-[0_12px_30px_-22px_rgba(16,18,15,0.5)]">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-semibold text-brand-ink marker:content-none">
                   {item.question}
                   <span
                     className="shrink-0 text-brand-forest transition-transform duration-200 group-open:rotate-45"

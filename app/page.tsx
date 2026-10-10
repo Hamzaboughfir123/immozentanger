@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pb-20 lg:pb-0">
+      <main>
         <HeroSection />
         <BenefitsSection />
         <SavingsSection />

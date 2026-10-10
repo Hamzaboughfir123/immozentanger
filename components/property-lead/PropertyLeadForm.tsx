@@ -173,7 +173,7 @@ export function PropertyLeadForm({ onSuccess }: { onSuccess?: () => void }) {
       </Field>
 
       <Field label="Type de bien" error={errors.propertyType}>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2 min-[400px]:grid-cols-3">
           {PROPERTY_TYPE_OPTIONS.map((opt) => (
             <button
               key={opt.value}

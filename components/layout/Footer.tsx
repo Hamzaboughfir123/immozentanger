@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <footer className="bg-brand-ink text-white/80">
-      <Container className="grid gap-12 py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+      <Container className="grid gap-8 py-10 sm:grid-cols-2 sm:gap-12 sm:py-16 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
           <a
             href={GROUP_URL}
@@ -25,7 +25,7 @@ export function Footer() {
             Agence immobilière nouvelle génération à Tanger. IA, digital et
             accompagnement humain au service des propriétaires.
           </p>
-          <ul className="mt-2 flex gap-4 text-sm">
+          <ul className="mt-2 flex flex-wrap gap-4 text-sm">
             {SOCIAL_LINKS.map((social) => (
               <li key={social.label}>
                 <a
@@ -62,7 +62,7 @@ export function Footer() {
           </p>
           <ul className="flex flex-col gap-3 text-sm text-white/70">
             <li>
-              <a href={CONTACT.phoneHref} className="hover:text-white">
+              <a href={CONTACT.phoneHref} className="inline-flex min-h-11 items-center break-all hover:text-white">
                 {CONTACT.phoneDisplay}
               </a>
             </li>

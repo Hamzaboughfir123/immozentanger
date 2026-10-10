@@ -38,7 +38,7 @@ export function PropertyLeadModal() {
       onClick={() => setOpen(false)}
     >
       <div
-        className="max-h-[92svh] w-full overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:max-w-lg sm:rounded-3xl sm:p-8"
+        className="max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-3xl bg-white p-4 [padding-bottom:max(1rem,env(safe-area-inset-bottom))] shadow-2xl sm:max-w-lg sm:rounded-3xl sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-5 flex items-start justify-between gap-4">
@@ -54,7 +54,7 @@ export function PropertyLeadModal() {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Fermer"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-brand-ink/50 transition-colors hover:bg-brand-beige hover:text-brand-ink"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-brand-ink/50 transition-colors hover:bg-brand-beige hover:text-brand-ink"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path

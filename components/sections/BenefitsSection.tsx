@@ -31,7 +31,7 @@ const BENEFITS = [
 
 export function BenefitsSection() {
   return (
-    <section id="pourquoi-immozen" className="relative overflow-hidden bg-white">
+    <section id="pourquoi-immozen" className="relative isolate overflow-hidden bg-white">
       <div className="absolute right-0 top-0 hidden h-[43%] w-[42%] lg:block">
         <Image
           src="/images/hero-tanger.jpg"
@@ -43,13 +43,13 @@ export function BenefitsSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent" />
       </div>
 
-      <Container className="relative flex min-h-[calc(100svh-5rem)] flex-col justify-between py-4 sm:py-6 lg:py-7">
+      <Container className="relative flex flex-col gap-8 py-12 sm:min-h-[calc(100svh-5rem)] sm:justify-between sm:py-14 lg:py-16">
         <div className="grid items-start gap-3 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="max-w-3xl">
             <span className="inline-flex rounded-full bg-brand-pistachio px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.12em] text-brand-ink shadow-[0_8px_24px_rgba(165,210,50,0.28)]">
               Propriétaires à Tanger
             </span>
-            <h2 className="mt-3 max-w-3xl text-balance font-display text-[clamp(2.1rem,4.5vw,4rem)] font-semibold leading-[0.9] text-brand-ink">
+            <h2 className="mt-3 max-w-3xl text-balance font-display text-[clamp(2.1rem,4.5vw,4rem)] font-semibold leading-[1.08] sm:leading-[0.9] text-brand-ink">
               Votre bien mérite
               <span className="block text-brand-forest">une meilleure histoire.</span>
             </h2>
@@ -67,7 +67,7 @@ export function BenefitsSection() {
           </div>
         </div>
 
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 pt-4 sm:grid-cols-2 lg:grid-cols-4">
           {BENEFITS.map((benefit) => (
             <div
               key={benefit.title}
@@ -87,7 +87,7 @@ export function BenefitsSection() {
                 <benefit.icon />
               </div>
               <h3 className="font-display text-lg font-semibold">{benefit.title}</h3>
-              <p className={`mt-1 text-xs leading-snug ${benefit.highlight ? "text-white/85" : "text-brand-ink/70"}`}>{benefit.text}</p>
+              <p className={`mt-2 text-sm leading-relaxed sm:mt-1 sm:text-xs sm:leading-snug ${benefit.highlight ? "text-white/85" : "text-brand-ink/70"}`}>{benefit.text}</p>
             </div>
           ))}
         </div>

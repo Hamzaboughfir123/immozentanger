@@ -47,19 +47,19 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "flex flex-col gap-5",
+        "flex min-w-0 flex-col gap-3 sm:gap-5",
         align === "center" && "items-center text-center",
         className,
       )}
     >
       {eyebrow ? <Eyebrow tone={tone}>{eyebrow}</Eyebrow> : null}
-      <h2 className="text-balance text-4xl font-medium leading-[1.08] sm:text-5xl">
+      <h2 className="text-balance text-3xl font-medium leading-[1.08] sm:text-5xl">
         {title}
       </h2>
       {description ? (
         <p
           className={cn(
-            "max-w-2xl text-lg leading-relaxed text-brand-anthracite/70",
+            "max-w-2xl text-base sm:text-lg leading-relaxed text-brand-anthracite/70",
             align === "center" && "mx-auto",
           )}
         >
